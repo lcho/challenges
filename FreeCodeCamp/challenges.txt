@@ -1,0 +1,10 @@
+// reversing a string
+function reverseString(str) {
+  var result = "";
+  var temp = str.split("");
+  temp = temp.reverse();
+  return temp.join("");
+}
+
+reverseString("hello");
+reverseString("Greetings from Earth");

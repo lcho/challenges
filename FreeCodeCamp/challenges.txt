@@ -8,3 +8,103 @@ function reverseString(str) {
 
 reverseString("hello");
 reverseString("Greetings from Earth");
+
+
+----------------------------------------------
+// Factorialize a Number
+function factorialize(num) {
+  if (num <= 1) return 1;
+  
+  return num * factorialize(num-1);
+}
+
+factorialize(5);
+
+
+----------------------------------------------
+// Palindrome
+// ignore all special characters and spaces
+
+function palindrome(str) {
+  // Good luck!
+  console.log("console str:", str);
+  var newstr = str.replace(/[^a-zA-Z\d]/gi, '').toLowerCase();
+  console.log("console:", newstr);
+  for(var i=0; i < newstr.length-1 /2; i++) {
+      if (newstr[i] !== newstr[newstr.length-1-i]) return false;
+  }
+  return true;
+}
+
+
+
+palindrome("eye");
+palindrome("not a palindrome");
+palindrome("_eye");
+palindrome("My age is 0, 0 si ega ym.");
+palindrome("almostomla");
+palindrome("five|\_/|four");
+palindrome("0_0 (: /-\ :) 0-0");
+palindrome("1 eye for of 1 eye.");
+
+
+----------------------------------------------
+// Find the Longest Word (number)
+
+function findLongestWord(str) {
+  var temp = str.split(' ');
+  var longest = 0;
+  for(var i=0; i<temp.length; i++) {
+    if (longest < temp[i].length) {
+      longest = temp[i].length;
+    }
+  }
+  return longest;
+}
+
+findLongestWord("The quick brown fox jumped over the lazy dog");
+
+
+
+----------------------------------------------
+// Title Case a Sentence
+// Return the provided string with the first letter of each word capitalized.
+
+function titleCase(str) {
+  var temp = str.split(' ');
+  
+  for(var i=0; i < temp.length; i++) {
+    temp[i] = temp[i].toLowerCase();
+    temp[i] = temp[i].charAt(0).toUpperCase() + temp[i].slice(1);
+  }
+  return temp.join(' ');
+}
+
+titleCase("I'm a little tea pot");
+titleCase("sHoRt AnD sToUt")
+titleCase("I'm a little tea pot")
+titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")
+
+
+----------------------------------------------
+// Return the Largest Numbers in each Arrays as a new array
+function largestOfFour(arr) {
+  // You can do this!
+  var newArray = new Array();
+  for(var i=0; i < arr.length; i++) {
+    var temp = Number.MIN_VALUE;
+    for(var j=0; j < arr[i].length; j++) {
+      if (arr[i][j] > temp) temp = arr[i][j];      
+    }
+    newArray.push(temp);
+  }
+  console.log(newArray);
+  return newArray;
+}
+
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]);
+
+----------------------------------------------
